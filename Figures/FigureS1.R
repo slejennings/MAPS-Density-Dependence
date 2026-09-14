@@ -196,8 +196,10 @@ for (i in 1:3) {
 }
 
 # print 4th page separately (only has 9 plots, so reducing nrow and height)
+# we've printed 36 plots so far. We need the final 9 species ideally in a panel with 3 columns and 3 rows
+# we can get this by printing page 5 (because 4*9 = 36, which accounts for the species in the above plots that have already been generated)
 for (i in 1:1) {
-  type2plots <- plots_type2_bothRE_FE + facet_wrap_paginate(~label, scales="free", nrow = 3, ncol = 3, page = 4) + 
+  type2plots <- plots_type2_bothRE_FE + facet_wrap_paginate(~label, scales="free", nrow = 3, ncol = 3, page = 5) + 
     labs(title = "Type 2 Curve") +
     theme(plot.title = element_text(size = 14, family = "Arial", face="bold"))
   
